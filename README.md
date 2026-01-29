@@ -2,7 +2,7 @@
 
 # ⚡ YT-DLP Premium GUI
 ### The Ultimate High-Performance Video Downloader
-**"Midnight Gold Edition"**
+
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-FFE873?style=for-the-badge&logo=python&logoColor=3776AB)](https://www.python.org/)
 [![yt-dlp](https://img.shields.io/badge/Powered_By-yt--dlp-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://github.com/yt-dlp/yt-dlp)
@@ -60,7 +60,7 @@ Enable **Turbo Mode** to unleash the full power of your connection.
 ### Setup
 1.  **Clone the Repo** (or download zip):
     ```bash
-    git clone https://github.com/Shiraken12T/yt-dlp-gui.git
+    git clone https://github.com/yomalii/yt-dlp-gui.git
     cd yt-dlp-gui
     ```
 2.  **Install Dependencies**:
@@ -92,9 +92,3 @@ Enable **Turbo Mode** to unleash the full power of your connection.
 
 This project is **Free to Use** and Open Source.
 *Powered by the incredible [yt-dlp](https://github.com/yt-dlp/yt-dlp) project.*
-
----
-<div align="center">
-<i>"Quality is not an act, it is a habit."</i>
-</div>
-# yt-dlp-gui
