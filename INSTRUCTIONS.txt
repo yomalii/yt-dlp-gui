@@ -1,0 +1,44 @@
+╔══════════════════════════════════════════════════════════════════╗
+║             YT-DLP PREMIUM GUI - INSTRUCTIONS                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+STEP 1: INSTALL DEPENDENCIES
+─────────────────────────────
+1. Right-click "install.bat" and select "Run as administrator"
+2. Wait for all installations to complete
+3. Restart your computer (recommended) or open a new terminal
+
+   This installs: Python, Deno, FFmpeg, yt-dlp, and required packages
+
+
+STEP 2: RUN THE APP
+─────────────────────────────
+Option A - Run the EXE (Recommended):
+   1. Go to the "dist" folder
+   2. Double-click "YT-DLP-GUI.exe"
+
+Option B - Run with Python:
+   1. Open Command Prompt in this folder
+   2. Type: python ytdlp.py
+   3. Press Enter
+
+
+TROUBLESHOOTING
+─────────────────────────────
+• "HTTP 403 Forbidden" error:
+  → Make sure Deno is installed: deno --version
+  → Reinstall yt-dlp: pip install -U "yt-dlp[default]"
+
+• No audio in downloaded video:
+  → Make sure FFmpeg is installed: ffmpeg -version
+  → Check that FFmpeg is in your PATH
+
+• App won't start:
+  → Verify Python is installed: python --version
+  → Verify all packages: pip install requests pillow "yt-dlp[default]"
+
+
+SUPPORT
+─────────────────────────────
+GitHub: https://github.com/yomalii/yt-dlp-gui
+Made by: Shiraken12T
