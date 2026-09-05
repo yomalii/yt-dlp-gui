@@ -1,0 +1,21 @@
+﻿# Build artifacts
+build/
+dist/
+__pycache__/
+*.py[cod]
+*.exe
+*.zip
+
+# Nested packaging copies
+ytdlp_final/
+
+# Secrets and local config
+.env
+credentials.json
+.ytdlp_gui_config.json
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

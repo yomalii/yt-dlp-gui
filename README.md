@@ -1,94 +1,84 @@
-<div align="center">
+# YT-DLP Studio
 
-# ⚡ YT-DLP Premium GUI
-### The Ultimate High-Performance Video Downloader
+Windows **yt-dlp GUI** for downloading YouTube (and other [yt-dlp](https://github.com/yt-dlp/yt-dlp)-supported sites). Pick format and quality, merge with **FFmpeg**, and use **Deno** for YouTube JavaScript challenges. Also branded **YT-DLP-GUI**. Portable build for **Windows 10/11**.
 
+[![Windows](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D6?logo=windows&logoColor=white)](https://github.com/yomalii/yt-dlp-gui)
+[![Version](https://img.shields.io/badge/version-1.3.0-8b7cff)](https://github.com/yomalii/yt-dlp-gui)
+[![yt-dlp](https://img.shields.io/badge/powered%20by-yt--dlp-red)](https://github.com/yt-dlp/yt-dlp)
+[![Author](https://img.shields.io/badge/author-Shiraken12T-111111)](https://github.com/Shiraken12T)
 
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-FFE873?style=for-the-badge&logo=python&logoColor=3776AB)](https://www.python.org/)
-[![yt-dlp](https://img.shields.io/badge/Powered_By-yt--dlp-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://github.com/yt-dlp/yt-dlp)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![Made By](https://img.shields.io/badge/Made_By-Shiraken12T-D4AF37?style=for-the-badge)](https://github.com/Shiraken12T)
+## Features
 
-<br/>
+- Paste a YouTube, TikTok, Instagram, or other yt-dlp URL, then **Analyze**
+- Media types: video + audio, video only, audio only
+- Formats: MP4, WebM, MP3, M4A
+- Quality list from the video’s available streams (up to 8K when present)
+- **Turbo**: 16 parallel download connections
+- **Premiere**: force H.264 + AAC for video editors
+- English SRT subtitles
+- Recent URLs, save folder picker, save thumbnail
+- Live size / speed / ETA
+- Status bar for yt-dlp, FFmpeg, and Deno — **Fix deps** updates yt-dlp and rechecks them
+- One automatic retry on connection timeout
 
-**A stunning, modern, and ultra-fast GUI for `yt-dlp`.**  
+## Requirements
 
-yt-dlp GUI is a modern, high-performance video downloader GUI for yt-dlp, allowing users to download videos and audio from YouTube, Instagram, TikTok, and thousands of supported websites with maximum quality and speed.
+- Windows 10 or 11
+- Internet connection
+- [FFmpeg](https://ffmpeg.org/) — merge video and audio
+- [Deno](https://deno.land/) — YouTube JS challenges (HTTP 403 without it)
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 
-Download videos from YouTube, Instagram, TikTok, and thousands of other sites with a single click.  
-Engineered for speed, aesthetics, and simplicity.
+Portable `setup.bat` needs [winget](https://learn.microsoft.com/windows/package-manager/winget/).  
+Running or building from source also needs **Python 3** and `pip`.
 
-[Features](#-key-features) • [Installation](#-installation) • [Usage](#-how-to-use) • [Credits](#-credits)
+## Quick start (portable)
 
----
-</div>
+1. Extract the ZIP to any folder
+2. Run `setup.bat` once (installs FFmpeg, Deno, downloads official `yt-dlp.exe`)
+3. Run `YT-DLP-GUI.exe`
 
-## ✨ Key Features
+The EXE is standalone and does **not** include Python. It needs `yt-dlp.exe` in the same folder. `setup.bat` downloads that binary from GitHub — it is required, not a duplicate.
 
-### 🎨 Premium "Midnight Gold" UI
-Experience a sleek, dark-themed interface (`#050505`) with metallic gold accents (`#D4AF37`). Minimalist, distraction-free, and beautiful.
+If `setup.bat` fails:
 
-### 🚀 Super Turbo Mode
-Enable **Turbo Mode** to unleash the full power of your connection.
--   **16x Parallel Connections**: Downloads chunks simultaneously for max speed.
--   **Optimized Buffer**: Custom buffer resizing to prevent throttles.
--   **No Speed Limits**: Bypasses average bandwidth restrictions.
+```bat
+winget install Gyan.FFmpeg
+winget install DenoLand.Deno
+```
 
-### 💎 Maximum Quality Engine
--   **Smart Selection**: Automatically grabs the **absolute highest resolution** (4K, 8K, Original).
--   **Auto-Merge**: Intelligent logic combines the best video stream (VP9/AV1) with the best audio (Opus/AAC).
--   **Premiere Compat Mode**: Need to edit? One checkbox forces **MP4 (H.264)** for compatibility with Premiere Pro & DaVinci Resolve.
+Then download `yt-dlp.exe` from [yt-dlp releases](https://github.com/yt-dlp/yt-dlp/releases) into the app folder.
 
-### 🔗 Universal Support & Robustness
--   **Instagram Reels & TikTok**: Downloads high-quality vertical videos with **generic URL support**.
--   **Smart Thumbnails**: Automatically detects and displays the **highest-resolution thumbnail** (no more blurry covers!).
--   **Crash-Proof**: Built-in auto-retry mechanisms for generic streams and timeout handling for slow servers.
+## How to use
 
-### 🛠️ Advanced Tools
--   **One-Click Installer**: Click **INSTALL** (top-right) to automatically install/update `yt-dlp`, dependencies, and check for FFmpeg.
--   **Real-time Stats**: Live Speed, Size, and ETA tracking.
--   **Thumbnail Saver**: Dedicated button to download the cover art.
+1. Paste or type a video URL
+2. Click **Analyze**
+3. Choose type, format, quality, and options
+4. Click **Download**
 
----
+## Troubleshooting
 
-## 📥 Installation
+Click **Fix deps** at the top right of the window to reinstall or update dependencies (yt-dlp and a recheck of FFmpeg and Deno). Try that first if something is missing or a download fails.
 
-### Prerequisites
-1.  **Python 3.10+**: [Download Here](https://www.python.org/downloads/)
-2.  **FFmpeg**: Required for merging video+audio. [Download Here](https://ffmpeg.org/download.html) (Minimize and add to PATH).
+**HTTP 403 / YouTube blocked**
+- Click **Fix deps** at the top of the window
+- Run `setup.bat` or `winget install DenoLand.Deno`
+- Update yt-dlp: `pip install --upgrade "yt-dlp[default]"`
 
-### Setup
-1.  **Clone the Repo** (or download zip):
-    ```bash
-    git clone https://github.com/yomalii/yt-dlp-gui.git
-    cd yt-dlp-gui
-    ```
-2.  **Install Dependencies**:
-    ```bash
-    pip install yt-dlp requests pillow
-    ```
-3.  **Run the App**:
-    ```bash
-    python ytdlp.py
-    ```
+**No audio / merge failed**
+- Install FFmpeg: `winget install Gyan.FFmpeg`
+- Restart the app
 
----
+**EXE cannot find yt-dlp**
+- Click **Fix deps** at the top of the window
+- Or run `setup.bat`, or put `yt-dlp.exe` next to `YT-DLP-GUI.exe`
 
-## 🎮 How to Use
+**Connection timed out**
+- Check your internet connection
+- Try again (the app retries once)
 
-1.  **Paste & Fetch**: Copy any video URL (YouTube, Insta, etc.) and click **SEARCH**.
-2.  **Customize**:
-    -   Select **Format** (MP4, MP3, etc.).
-    -   Choose **Quality** (Select "Best Available" for max res).
-    -   Toggle **🚀 Turbo Mode** for speed.
-3.  **Download**: Click the big gold **START DOWNLOAD** button.
-4.  **Enjoy**: Your file (and thumbnail!) will appear in your chosen folder.
+## License
 
----
+Use responsibly. Respect content creators and platform terms of service.
 
-## 👨‍💻 Credits
-
-**Made with by [Shiraken12T](https://github.com/yomalii)**
-
-This project is **Free to Use** and Open Source.
-*Powered by the incredible [yt-dlp](https://github.com/yt-dlp/yt-dlp) project.*
+Made by [Shiraken12T](https://github.com/Shiraken12T). Downloads are handled by [yt-dlp](https://github.com/yt-dlp/yt-dlp).
