@@ -1,13 +1,23 @@
-﻿# Build artifacts
+﻿# Source-only GitHub repo. Keep local build/packaging files untracked.
 build/
 dist/
 __pycache__/
 *.py[cod]
 *.exe
 *.zip
+*.spec
+
+# Local packaging / setup scripts (keep on disk, not on GitHub)
+build.bat
+package.bat
+setup.bat
+README.txt
+requirements.txt
+ytdlp.spec
 
 # Nested packaging copies
 ytdlp_final/
+yt-dlp_github_files/
 
 # Secrets and local config
 .env
